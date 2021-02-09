@@ -1,0 +1,71 @@
+<div class="card">
+    <div class="card-header">
+      <h6>{{pageTitle}}</h6>
+    </div>
+  
+    <div class="card-body">
+      <div class="row">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <form [formGroup]="rForm">                            
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': f.name.errors && f.name?.touched }" />
+                                <div *ngIf="f.name.errors && f.name?.touched" class="invalid-feedback">
+                                    <div *ngIf="f.name.errors?.required && f.name?.touched">Field is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': f.lastName.errors && f.lastName?.touched }" />
+                                <div *ngIf="f.lastName.errors && f.lastName?.touched" class="invalid-feedback">
+                                    <div *ngIf="f.lastName.errors?.required && f.lastName?.touched">Field is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Town</label>
+                                <input type="text" formControlName="town" class="form-control" [ngClass]="{ 'is-invalid': f.town.errors && f.town?.touched }" />
+                                <div *ngIf="f.town.errors && f.town?.touched" class="invalid-feedback">
+                                    <div *ngIf="f.town.errors?.required && f.town?.touched">Field is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Street Name</label>
+                                <input type="text" formControlName="streetName" class="form-control" [ngClass]="{ 'is-invalid': f.streetName.errors && f.streetName?.touched }" />
+                                <div *ngIf="f.streetName.errors && f.streetName?.touched" class="invalid-feedback">
+                                    <div *ngIf="f.streetName.errors?.required && f.streetName?.touched">Field is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Street Number</label>
+                                <input type="number" formControlName="number" class="form-control" [ngClass]="{ 'is-invalid': f.number.errors && f.number?.touched }" />
+                                <div *ngIf="f.number.errors && f.number?.touched" class="invalid-feedback">
+                                    <div *ngIf="f.number.errors?.required && f.number?.touched">Field is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Short Description</label>
+                                <input type="text" formControlName="shortDesc" class="form-control" [ngClass]="{ 'is-invalid': f.shortDesc.errors && f.shortDesc?.touched }" />
+                                <div *ngIf="f.shortDesc.errors && f.shortDesc?.touched" class="invalid-feedback">
+                                    <div *ngIf="f.shortDesc.errors?.required && f.shortDesc?.touched">Field is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Long Description</label>
+                                <input type="text" formControlName="longDesc" class="form-control" [ngClass]="{ 'is-invalid': f.longDesc.errors && f.longDesc?.touched }" />
+                                <div *ngIf="f.longDesc.errors && f.longDesc?.touched" class="invalid-feedback">
+                                    <div *ngIf="f.longDesc.errors?.required && f.longDesc?.touched">Field is required</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary f-btn m-1" [disabled]="!fValid" (click)="onSubmit()">Submit</button>
+                                <button class="btn btn-primary f-btn m-1" (click)="onReset()">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    

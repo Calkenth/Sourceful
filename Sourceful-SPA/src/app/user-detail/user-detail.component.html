@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-header">
+      {{pageTitle}}
+    </div>
+  
+    <div class="card-body">    
+  
+      <div class="table-responsive">
+        <table class="table mb-0"
+               *ngIf="userDetail">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Last Name</th>
+                    <th>Town</th>
+                    <th>Street Name</th>
+                    <th>Home number</th>
+                    <th>Short Description</th>
+                    <th>Long Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{userDetail.name | uppercase}}</td>
+                    <td>{{userDetail.lastName}}</td>
+                    <td>{{userDetail.town}}</td>
+                    <td>{{userDetail.streetName}}</td>
+                    <td>{{userDetail.number}}</td>
+                    <td>{{userDetail.shortDesc}}</td>
+                    <td>{{userDetail.longDesc}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <tr *ngIf="!userDetail?.name">User is not found</tr>
+</div>
+</div>
